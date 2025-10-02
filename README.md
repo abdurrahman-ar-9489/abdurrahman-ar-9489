@@ -45,6 +45,7 @@ Holaa Embedded Enthusiasts! I’m a passionate embedded systems engineer who lov
 ### 📰 Latest Blogs
 #### RTOS from Scratch: A Practical Guide
 <!-- BLOG-RTOS:START -->
+- [RTOS from Scratch: Part 1 - Basics]()
 <!-- BLOG-RTOS:END -->
 
 ---
