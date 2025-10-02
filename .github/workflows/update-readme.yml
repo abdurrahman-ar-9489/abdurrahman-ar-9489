@@ -1,0 +1,58 @@
+name: Update README with blogs
+
+on:
+  push:
+    paths:
+      - 'blogs/**'   # triggers when any file under blogs/ changes
+  workflow_dispatch: # allows manual trigger
+
+permissions:
+  contents: write   # allows workflow to push changes to README
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Install jq (JSON parser)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Update README sections from blogs/*.json
+        run: |
+          set -euo pipefail
+
+          for f in blogs/*.json; do
+            [ -f "$f" ] || continue
+            name=$(basename "$f" .json)
+            marker="BLOG-${name^^}"  # Uppercase JSON filename
+            echo "Processing $f -> marker $marker"
+
+            if [ -s "$f" ]; then
+              jq -r '.[] | "- [" + .title + "](" + .url + ")"' "$f" > section.md
+            else
+              printf "" > section.md
+            fi
+
+            awk -v start="<!-- ${marker}:START -->" -v end="<!-- ${marker}:END -->" -v file="section.md" '
+              BEGIN { in_section=0 }
+              $0==start { print; while((getline line < file) > 0) print line; close(file); in_section=1; next }
+              $0==end { in_section=0; print; next }
+              { if(!in_section) print }
+            ' README.md > README.tmp && mv README.tmp README.md
+          done
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Update blog sections"
+            git push
