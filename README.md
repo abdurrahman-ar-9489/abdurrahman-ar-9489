@@ -46,6 +46,7 @@ Holaa Embedded Enthusiasts! I’m a passionate embedded systems engineer who lov
 #### RTOS from Scratch: A Practical Guide
 <!-- BLOG-RTOS:START -->
 - [Lesson 1: Hello World of Embedded Systems — Blinking an LED](https://www.linkedin.com/posts/abdur-rahman-ar1411_rtosfromscratch-embeddedsystems-baremetal-activity-7380137431624441856-t1TO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADiEymgBmGJ4rdP4O5VbtKgLnFXeuE3DZaI)
+- [Lesson 2: Pitfalls of Read - Modify - Write and Power of Atomic access ](https://www.linkedin.com/posts/abdur-rahman-ar1411_rtosfromscratch-embeddedsystems-baremetal-activity-7382633589479260160-C-uu?utm_source=share&utm_medium=member_android&rcm=ACoAADiEymgBmGJ4rdP4O5VbtKgLnFXeuE3DZaI)
 <!-- BLOG-RTOS:END -->
 
 ---
