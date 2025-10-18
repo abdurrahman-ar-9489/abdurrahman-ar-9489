@@ -3,4 +3,14 @@
     "title": "Lesson 1: Hello World of Embedded Systems — Blinking an LED",
     "url": "https://www.linkedin.com/posts/abdur-rahman-ar1411_rtosfromscratch-embeddedsystems-baremetal-activity-7380137431624441856-t1TO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADiEymgBmGJ4rdP4O5VbtKgLnFXeuE3DZaI"
   }
+  
+  {
+    "title" : "Lesson 2: The Pitfalls of Read–Modify–Write — and the Power of Atomic Access"
+    "url" : "https://www.linkedin.com/posts/abdur-rahman-ar1411_rtosfromscratch-embeddedsystems-baremetal-activity-7382633589479260160-C-uu?utm_source=share&utm_medium=member_desktop&rcm=ACoAADiEymgBmGJ4rdP4O5VbtKgLnFXeuE3DZaI"
+  }
+
+  {
+    "title" : "APB vs AHB — Speeding Up Our GPIO Access"
+    "url"  : "https://www.linkedin.com/posts/abdur-rahman-ar1411_include-define-define-activity-7385177031149457408-fbi0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADiEymgBmGJ4rdP4O5VbtKgLnFXeuE3DZaI"
+  }
 ]
